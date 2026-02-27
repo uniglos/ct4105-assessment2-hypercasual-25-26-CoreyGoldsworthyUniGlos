@@ -28,7 +28,7 @@ public class SwervePlayerController : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        SpherePos = new Vector3(transform.position.x,transform.position.y + groundedOffset,transform.position.z);
+        SpherePos = new Vector3(transform.position.x,0.1f + groundedOffset,transform.position.z);
         isGrounded = Physics.CheckSphere(SpherePos, 0.5f, GroundLayerMask);        
     }
 
