@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     private float targetY;
     private float startY;
 
+    
 
     void Awake()
     {
@@ -46,9 +47,11 @@ public class CameraFollow : MonoBehaviour
     }
 
     
+
+    
     public void SetTargetY(float newTopY)
     {
-       
+        
         if (newTopY > targetY)
             targetY = newTopY;
     }

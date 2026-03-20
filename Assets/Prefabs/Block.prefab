@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd7d959e2ef4e44891a467fbf508116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 12
+  fallSpeed: 10
   landThreshold: 0.05

@@ -25,9 +25,9 @@ public class StackController : MonoBehaviour
 
     
     private List<Transform> stack = new List<Transform>();
-    private Vector3 topBlockSize;  
+    private Vector3 topBlockSize;   
 
- 
+    
 
     void Awake()
     {
@@ -47,22 +47,26 @@ public class StackController : MonoBehaviour
     }
 
     
+
+    
+    
+    
     public Vector3 GetTopPosition()
     {
         Transform top = stack[stack.Count - 1];
         return top.position + Vector3.up * (top.localScale.y * 0.5f);
     }
 
-  
+    
     public Vector3 GetTopBlockSize() => topBlockSize;
 
-   
+    
     public void OnBlockLanded(Block block)
     {
         Transform top   = stack[stack.Count - 1];
         Transform bTr   = block.transform;
 
-       
+        
         float topLeft    = top.position.x  - top.localScale.x  * 0.5f;
         float topRight   = top.position.x  + top.localScale.x  * 0.5f;
         float blockLeft  = bTr.position.x  - bTr.localScale.x  * 0.5f;
@@ -93,7 +97,7 @@ public class StackController : MonoBehaviour
             return;
         }
 
-       
+        
         bool isPerfect = overhang < perfectThreshold;
 
         
@@ -112,38 +116,40 @@ public class StackController : MonoBehaviour
             Vector3 debrisPos  = new Vector3(debrisCenterX, bTr.position.y, bTr.position.z);
             SpawnDebrisAt(bTr, debrisPos, debrisSize);
 
-           
+            
             float newCenterX = overlapLeft + overlapWidth * 0.5f;
             bTr.position   = new Vector3(newCenterX, bTr.position.y, bTr.position.z);
             bTr.localScale = new Vector3(overlapWidth, bTr.localScale.y, bTr.localScale.z);
         }
 
-       
+        
         stack.Add(bTr);
         topBlockSize = bTr.localScale;
 
-       
+        
         GameManager.Instance.AddScore(isPerfect ? 2 : 1);
 
-       
+        
         CameraFollow.Instance?.SetTargetY(GetTopPosition().y);
 
-      
+        
         BlockSpawner.Instance.OnBlockLanded();
     }
 
    
+
+    
     void SpawnDebris(Transform source, Vector3 size)
         => SpawnDebrisAt(source, source.position, size);
 
     void SpawnDebrisAt(Transform source, Vector3 worldPos, Vector3 size)
     {
-       
+        
         GameObject debris = GameObject.CreatePrimitive(PrimitiveType.Cube);
         debris.transform.position   = worldPos;
         debris.transform.localScale = size;
 
-       
+        
         var srcRend  = source.GetComponent<Renderer>();
         var debRend  = debris.GetComponent<Renderer>();
         if (srcRend != null && debRend != null)

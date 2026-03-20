@@ -5,7 +5,7 @@ public class BlockSpawner : MonoBehaviour
     public static BlockSpawner Instance { get; private set; }
 
     [Header("Block Setup")]
-    [Tooltip("Prefab that has the Block component attached.")]
+    [Tooltip("Prefab with the Block component attached.")]
     public GameObject blockPrefab;
 
     [Header("Slide Settings")]
@@ -17,18 +17,18 @@ public class BlockSpawner : MonoBehaviour
     public float slideSpeed = 2f;
     [Tooltip("Speed increase per successful placement.")]
     public float speedIncreasePerBlock = 0.1f;
-    [Tooltip("Maximum slide speed.")]
+    [Tooltip("Maximum slide speed cap.")]
     public float maxSlideSpeed = 6f;
 
-    [Header("Block Colours (optional – leave empty for random)")]
+    [Header("Block Colours (leave empty for auto hue-cycle)")]
     public Color[] palette;
 
-    
-    private Block activeBlock;          
+   
+    private Block activeBlock;
     private float currentSlideSpeed;
     private int blockCount;
 
-   
+    
 
     void Awake()
     {
@@ -43,12 +43,25 @@ public class BlockSpawner : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.Instance.IsGameRunning || activeBlock == null) return;
-
-       
-        float newX = activeBlock.transform.position.x + currentSlideSpeed * Time.deltaTime;
+        bool tapped = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
 
         
+        if (!GameManager.Instance.IsGameRunning)
+        {
+            if (tapped)
+            {
+                GameManager.Instance.StartGame();
+                SpawnNext();            
+            }
+            return;                     
+        }
+
+        
+        if (activeBlock == null) return;
+
+        
+        float newX = activeBlock.transform.position.x + currentSlideSpeed * Time.deltaTime;
+
         if (Mathf.Abs(newX) >= slideRange)
         {
             currentSlideSpeed = -currentSlideSpeed;
@@ -61,20 +74,23 @@ public class BlockSpawner : MonoBehaviour
             activeBlock.transform.position.z);
 
         
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (tapped)
             DropActiveBlock();
     }
 
     
+
+    
     public void SpawnNext()
     {
-        if (blockPrefab == null) { Debug.LogError("[BlockSpawner] blockPrefab is not assigned!"); return; }
+        if (blockPrefab == null)
+        {
+            Debug.LogError("[BlockSpawner] blockPrefab is not assigned!");
+            return;
+        }
 
-        Vector3 stackTop = StackController.Instance.GetTopPosition();
-        Vector3 spawnPos = new Vector3(
-            -slideRange,                            // start from one edge
-            stackTop.y + spawnHeightOffset,
-            stackTop.z);
+        Vector3 stackTop  = StackController.Instance.GetTopPosition();
+        Vector3 spawnPos  = new Vector3(-slideRange, stackTop.y + spawnHeightOffset, stackTop.z);
 
         GameObject go = Instantiate(blockPrefab, spawnPos, Quaternion.identity);
         activeBlock = go.GetComponent<Block>();
@@ -86,22 +102,22 @@ public class BlockSpawner : MonoBehaviour
             return;
         }
 
-       
-        Vector3 lastSize = StackController.Instance.GetTopBlockSize();
-        activeBlock.SetSize(lastSize);
+        
+        activeBlock.SetSize(StackController.Instance.GetTopBlockSize());
 
         
         activeBlock.SetColour(PickColour(blockCount));
 
-        currentSlideSpeed = Mathf.Min(
-            (blockCount % 2 == 0 ? 1f : -1f) *   
-            (slideSpeed + blockCount * speedIncreasePerBlock),
-            maxSlideSpeed);
+        
+        float dir   = (blockCount % 2 == 0) ? 1f : -1f;
+        float speed = slideSpeed + blockCount * speedIncreasePerBlock;
+        currentSlideSpeed = dir * Mathf.Min(speed, maxSlideSpeed);
 
         blockCount++;
     }
 
     
+
     public void OnBlockLanded()
     {
         activeBlock = null;
@@ -114,7 +130,7 @@ public class BlockSpawner : MonoBehaviour
     {
         if (activeBlock == null) return;
         activeBlock.Drop();
-        activeBlock = null;        
+        activeBlock = null;     
     }
 
     Color PickColour(int index)
@@ -122,7 +138,6 @@ public class BlockSpawner : MonoBehaviour
         if (palette != null && palette.Length > 0)
             return palette[index % palette.Length];
 
-       
         return Color.HSVToRGB((index * 0.13f) % 1f, 0.7f, 0.95f);
     }
 }

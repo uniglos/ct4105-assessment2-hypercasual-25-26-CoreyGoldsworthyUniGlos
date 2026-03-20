@@ -18,6 +18,8 @@ public class Block : MonoBehaviour
     private bool hasLanded;
     private float targetY;          
 
+   
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,7 +34,7 @@ public class Block : MonoBehaviour
         
         transform.position += Vector3.down * fallSpeed * Time.deltaTime;
 
-        
+       
         if (transform.position.y <= targetY)
         {
             
@@ -42,11 +44,12 @@ public class Block : MonoBehaviour
     }
 
     
+
     public void Drop()
     {
         if (isDropped) return;
 
-        // targetY = top of stack + half of this block's height
+        
         float stackTopY       = StackController.Instance.GetTopPosition().y;
         float blockHalfHeight = transform.localScale.y * 0.5f;
         targetY = stackTopY + blockHalfHeight;
@@ -54,13 +57,13 @@ public class Block : MonoBehaviour
         isDropped = true;
     }
 
-   
+    
     public void SetSize(Vector3 size)
     {
         transform.localScale = size;
     }
 
-   
+    
     public void SetColour(Color colour)
     {
         var rend = GetComponent<Renderer>();
@@ -78,7 +81,8 @@ public class Block : MonoBehaviour
     void Land()
     {
         hasLanded = true;
-       
+        
+
         StackController.Instance.OnBlockLanded(this);
     }
 }

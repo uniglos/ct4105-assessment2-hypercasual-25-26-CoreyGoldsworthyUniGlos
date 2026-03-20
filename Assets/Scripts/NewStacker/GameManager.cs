@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private int bestScore;
     private const string BestScoreKey = "BestScore";
 
+    
 
     void Awake()
     {
@@ -32,11 +33,8 @@ public class GameManager : MonoBehaviour
         ShowStartScreen();
     }
 
-    void Update()
-    {
-        if (!IsGameRunning && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
-            StartGame();
-    }
+    
+    
 
     
 
@@ -47,10 +45,9 @@ public class GameManager : MonoBehaviour
         UpdateUI();
         SetPanel(tapToStartPanel, false);
         SetPanel(gameOverPanel,   false);
-        BlockSpawner.Instance.SpawnNext();
+        
     }
 
-  
     public void AddScore(int points = 1)
     {
         score += points;
@@ -62,7 +59,6 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
-   
     public void TriggerGameOver()
     {
         IsGameRunning = false;
@@ -73,7 +69,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame() =>
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
- 
+    
 
     void ShowStartScreen()
     {
