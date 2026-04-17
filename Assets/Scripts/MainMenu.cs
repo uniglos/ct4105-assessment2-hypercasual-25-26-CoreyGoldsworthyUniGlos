@@ -5,6 +5,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuPanel;
+    public GameObject gameOverScreen;
     public GameObject returnButton; // Reference to the return button
     private CanvasGroup canvasGroup;
 
@@ -68,6 +69,7 @@ IEnumerator ActivateHUDAfterReload()
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         StartCoroutine(FadeInMenu());
+        gameOverScreen.SetActive(false);
     }
 
 	public void ReturnToMainMenu(int scene)
