@@ -349,10 +349,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7849268929617644440, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3adf2c226e5afc145be8b92fd694aaac, type: 2}
+    - target: {fileID: -7202464317774104332, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e656b4331a69bfd42a2860564656bbc4, type: 2}
+    - target: {fileID: -3477821731311062464, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e656b4331a69bfd42a2860564656bbc4, type: 2}
+    - target: {fileID: -1592289475483123607, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e656b4331a69bfd42a2860564656bbc4, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
       propertyPath: m_Name
       value: crane
       objectReference: {fileID: 0}
+    - target: {fileID: 1603246306389932429, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e656b4331a69bfd42a2860564656bbc4, type: 2}
+    - target: {fileID: 3816654056258493912, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3adf2c226e5afc145be8b92fd694aaac, type: 2}
+    - target: {fileID: 4407187375235809858, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3adf2c226e5afc145be8b92fd694aaac, type: 2}
+    - target: {fileID: 8736054615233459941, guid: 4d7eb68fe84444648943ded2e63905d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3adf2c226e5afc145be8b92fd694aaac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -381,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 3568600610919834159, guid: 8f585c8e7c63ca546bf212f366c3b3b5, type: 3}
       propertyPath: m_Name
       value: Canvas_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568600610919834159, guid: 8f585c8e7c63ca546bf212f366c3b3b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4013744710101601484, guid: 8f585c8e7c63ca546bf212f366c3b3b5, type: 3}
       propertyPath: m_Pivot.x
@@ -738,7 +774,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e656b4331a69bfd42a2860564656bbc4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -869,7 +905,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.67, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 3}
+  m_LocalScale: {x: 4, y: 0.5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -977,13 +1013,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e87186ba7aa154fbedaf081ef6a6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 6560998344775675609, guid: cbe1bc140f18cb648985d67f9ff9814f, type: 3}
+  blockPrefab: {fileID: 5876573866636250453, guid: 8408e7634229b534789d20db77d1e5db, type: 3}
   spawnHeightOffset: 6
   slideRange: 3
   slideSpeed: 2
   speedIncreasePerBlock: 0.1
   maxSlideSpeed: 6
-  palette: []
+  palette:
+  - {r: 0.7137255, g: 0.48235294, b: 0.039215688, a: 0}
 --- !u!4 &2141472715
 Transform:
   m_ObjectHideFlags: 0
