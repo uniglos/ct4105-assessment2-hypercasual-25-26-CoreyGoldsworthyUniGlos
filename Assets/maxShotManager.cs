@@ -1,18 +1,22 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
-
+using TMPro;
+using UnityEngine.UI;
 public class maxShotManager : MonoBehaviour
 {
 
     public float shotCount = 5f;
     public GameObject shooter;
+    public TextMeshProUGUI shotsLeft;
 
 
+    private void Start()
+    {
+        shotsLeft.text = shotCount.ToString();
+    }
     public void tally()
     {
         shotCount = shotCount - 1f;
+        shotsLeft.text = shotCount.ToString();
     }
     private void Update()
     {
