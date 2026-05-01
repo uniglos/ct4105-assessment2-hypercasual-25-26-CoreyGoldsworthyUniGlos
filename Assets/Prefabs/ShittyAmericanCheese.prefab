@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4335549870501764439}
   - component: {fileID: 1303227897163353326}
   - component: {fileID: 4394645779783690501}
-  - component: {fileID: 3815628468489422316}
+  - component: {fileID: 4947083574390071486}
   m_Layer: 0
-  m_Name: Block
+  m_Name: ShittyAmericanCheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3815628468489422316
+--- !u!114 &4947083574390071486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,11 +101,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5876573866636250453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd7d959e2ef4e44891a467fbf508116, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b3aac9eddbff824cae884034f97a4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
-  landThreshold: 0.05
+  directionMult: 1
 --- !u!1001 &2266114996144787511
 PrefabInstance:
   m_ObjectHideFlags: 0

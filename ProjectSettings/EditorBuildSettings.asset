@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shooting.unity
     guid: 90dadaf9fc0b4f44ca8ecf73eaf4ef09
+  - enabled: 1
+    path: Assets/Scenes/Rat Runner.unity
+    guid: 99fc0fec72c6b284b871cf76720633f1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
