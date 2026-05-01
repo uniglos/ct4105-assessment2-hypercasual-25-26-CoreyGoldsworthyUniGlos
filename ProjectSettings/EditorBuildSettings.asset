@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/LAUNCHSCREEN_MENU.unity
     guid: 65762a7f2ce7c574cb6d75422643b531
   - enabled: 0
-    path: Assets/Scenes/MainMenu old.unity
+    path: Assets/Scenes/Old Scenes/MainMenu old.unity
     guid: 78ea9b5b11a7ae3429b55be916f66e60
   - enabled: 1
-    path: Assets/Scenes/Runner.unity
+    path: Assets/Scenes/Old Scenes/Runner.unity
     guid: 5db432afb313c8c40a88056696c8fb13
   - enabled: 1
     path: Assets/Scenes/TheFisher.unity
