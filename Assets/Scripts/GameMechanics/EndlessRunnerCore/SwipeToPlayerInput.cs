@@ -34,8 +34,8 @@ public class SwipeToPlayerInput : MonoBehaviour
         if (dir.y > verticalThreshold)
         {
             player.SwervePlayer(Vector2.zero); // triggers jump in your controller
-            if (animations != null)
-                animations.PlayJump();
+           // if (animations != null)
+//animations.PlayJump();
         }
     }
 }
