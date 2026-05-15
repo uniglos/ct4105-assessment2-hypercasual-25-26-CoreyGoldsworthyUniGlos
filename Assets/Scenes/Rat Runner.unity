@@ -5132,7 +5132,7 @@ MonoBehaviour:
   onGameOver:
     m_PersistentCalls:
       m_Calls: []
-  spawnPos: {x: 0, y: 0, z: 11.5}
+  spawnPos: {x: 0, y: 0, z: 11}
 --- !u!4 &176697527
 Transform:
   m_ObjectHideFlags: 0
@@ -15400,7 +15400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 355923297}
-  horizontalThreshold: 0.4
+  horizontalThreshold: 1
   verticalThreshold: 0.2
 --- !u!1001 &367526062
 PrefabInstance:

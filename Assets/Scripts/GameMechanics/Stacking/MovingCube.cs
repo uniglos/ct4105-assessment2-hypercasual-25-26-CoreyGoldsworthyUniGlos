@@ -38,7 +38,7 @@ public class MovingCube : MonoBehaviour {
         if (currentCube != lastCube) {
             directionMult = 1;
         }
-        GetComponent<Renderer>().material.color = GetRandomColor();
+        GetComponent<Renderer>().material.color = Color.yellow;
 
         transform.localScale = new Vector3(lastCube.transform.localScale.x, transform.localScale.y, lastCube.transform.localScale.z);
     }
