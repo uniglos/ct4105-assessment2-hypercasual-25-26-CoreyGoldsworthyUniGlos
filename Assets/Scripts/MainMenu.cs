@@ -39,7 +39,8 @@ void Start()
 
 public void RestartGame()
 	{
-		returnButton.SetActive(true);
+        AudioListener.pause = false;
+        returnButton.SetActive(true);
 		PlayerPrefs.SetInt("Restarted", 1);
 		PlayerPrefs.Save();
     
