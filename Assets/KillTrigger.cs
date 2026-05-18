@@ -17,5 +17,10 @@ public class KillTrigger : MonoBehaviour
         platform_3.enabled = false;
         swipeFunctions.enabled = false;
         gameOver.SetActive(true);
+
+        AudioListener.pause = true;
+
     }
 }
+
+
