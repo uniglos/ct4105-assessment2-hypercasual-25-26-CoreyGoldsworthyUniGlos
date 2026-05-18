@@ -19806,7 +19806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &286263095
 Transform:
   m_ObjectHideFlags: 0
@@ -30215,6 +30215,10 @@ PrefabInstance:
     - target: {fileID: 6560998344775675609, guid: cbe1bc140f18cb648985d67f9ff9814f, type: 3}
       propertyPath: m_Name
       value: Good Cheese (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560998344775675609, guid: cbe1bc140f18cb648985d67f9ff9814f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50489,7 +50493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1141008184
 Transform:
   m_ObjectHideFlags: 0
@@ -66292,6 +66296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bad Cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 6560998344775675609, guid: cbe1bc140f18cb648985d67f9ff9814f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6924745209095963401, guid: cbe1bc140f18cb648985d67f9ff9814f, type: 3}
     m_RemovedGameObjects: []
@@ -66457,8 +66465,8 @@ Transform:
   m_GameObject: {fileID: 1727797676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.34, y: 5.5, z: -7.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.05, y: 2.39, z: -5.91}
+  m_LocalScale: {x: 0.24639, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97330,10 +97338,10 @@ SceneRoots:
   - {fileID: 1586421350}
   - {fileID: 2016096387}
   - {fileID: 176697527}
-  - {fileID: 1727797680}
   - {fileID: 355923302}
   - {fileID: 1926587126}
   - {fileID: 274590870}
   - {fileID: 1743496178}
   - {fileID: 1481143877}
   - {fileID: 1178201849}
+  - {fileID: 1727797680}
