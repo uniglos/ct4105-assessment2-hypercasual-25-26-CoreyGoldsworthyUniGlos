@@ -73,7 +73,13 @@ IEnumerator ActivateHUDAfterReload()
         gameOverScreen.SetActive(false);
     }
 
-	public void ReturnToMainMenu(int scene)
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0f; // Pause the game on death
+    }
+
+    public void ReturnToMainMenu(int scene)
 	{
 		Time.timeScale = 0; // Pause game when returning to main menu
 		SceneManager.LoadScene(scene); // Replace "MainMenuScene" with your actual main menu scene name

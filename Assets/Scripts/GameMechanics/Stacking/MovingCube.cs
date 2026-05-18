@@ -56,7 +56,9 @@ public class MovingCube : MonoBehaviour {
             lastCube = null;
             currentCube = null;
             
-            gameManager.StopGame();            
+            gameManager.StopGame();
+            FindAnyObjectByType<MainMenu>().GameOver();
+            return;
         }
 
         if (Mathf.Abs(hangover) < gameManager.minHangoverForPerfectScore) {
