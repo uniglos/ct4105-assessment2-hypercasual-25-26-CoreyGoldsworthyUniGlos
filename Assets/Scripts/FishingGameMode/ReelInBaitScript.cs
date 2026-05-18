@@ -11,11 +11,13 @@ public class ReelInBaitScript : MonoBehaviour
     public UnityEvent ReelInComplete;
     // Start is called before the first frame update
     float startingYpos;
+    Vector3 startingXpos;
     Vector3 dragOffset = Vector3.zero;
 
     private void Start()
     {
         startingYpos = transform.position.y;
+        startingXpos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y); ;
     }
     public void StartReeling()
     {
@@ -56,6 +58,7 @@ public class ReelInBaitScript : MonoBehaviour
             {
                 reeling = false;
                 transform.position = (transform.position - (Vector3.up * transform.position.y))+ Vector3.up * startingYpos;
+                gameObject.transform.position = startingXpos;
                 ReelInComplete.Invoke();
             }
         }
